@@ -14,7 +14,7 @@ tags: [scala, algebraic, adt]
 ---
 Algebraic data types, usually abbreviated ADTs, are a useful construct to know how to use. At a high level, they're somewhat similar to enums in Java, but Scala lends much more power to the construct. ADTs define a fixed set of all possible values of a given type. The classic example of an ADT in Scala is the [`Option`](http://www.scala-lang.org/api/current/index.html#scala.Option) type. An `Option` represents something that may or may not have a value. No value is `None` and some value is `Some()`. This is the functional version of returning an object or null from a method in Java, and is very useful for Java interoperability to eliminate `NullPointerException`'s.
 
-So to see how we might apply this in our own code, we're going to take the ever-popular FizzBuzz and show how it could be implemented using ADTs. Just as a refresher, let's look at how FizzBuzz might be implemented in Java.
+So to see how we might apply this in our own code, we're going to take the ever-popular [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) and show how it could be implemented using ADTs. Just as a refresher, let's look at how FizzBuzz might be implemented in Java.
 
 ```java
 public static void printIt(Integer i) {
@@ -102,7 +102,7 @@ case class JustInt(i: Int) extends FizzBuzzADT(i)
 ```
 
 We've defined `Fizz`, `Buzz`, `FizzBuzz`, and `JustInt`. It might not be clear yet why we've defined constructor arguments for `Fizz`, `Buzz`
-, and `FizzBuzz`, but it gives us some opportunites that we'll talk about in a minute.
+, and `FizzBuzz`, but it gives us some opportunities that we'll talk about in a minute.
 
 So all we need now is a way to create our values given any integer. The `FizzBuzzADT` companion object is the perfect place for this.
 
@@ -164,4 +164,4 @@ But are you sure there's not a typo? What if it's decided that Fizz should be sp
 
 The FizzBuzz ADT isn't truly the best example for demonstrating the power of ADTs, but it did serve to show how you can take an algorithm from a rather brittle form susceptible to runtime errors to a type-safe form with compile-time errors. Hopefully I've demystified algebraic data types and shown how they're valuable constructs to understand and how you can employ them in your code to build more robust applications.
 
-All code shown can be found [here](https://github.com/jfklingler/algebraic-datatypes) or just `git clone git@github.com:jfklingler/algebraic-datatypes.git`.
+All code shown can be found [here](https://github.com/MonsantoCo/algebraic-datatypes) or just `git clone git@github.com:MonsantoCo/algebraic-datatypes.git`.
